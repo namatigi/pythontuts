@@ -124,7 +124,7 @@ mgr1.print_emps()
 
 print(issubclass(Developer,Employee))
 
-
+print(issubclass(Manager, Developer))
 
 #print(dev1.fullname())
 
