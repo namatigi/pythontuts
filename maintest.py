@@ -1,6 +1,6 @@
 
 def main():
-	pass
+	print('First module name  is {}'.format(__name__))
 
 
 if __name__  == "__main__":
