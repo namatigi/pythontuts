@@ -31,6 +31,21 @@ class Employee:
 			return False
 		return True
 
+	def __repr__(self):
+		return "Employee('{}', '{}','{}')".format(self.first,self.last,self.pay)
+
+
+	def __str__(self):
+		return '{} - {}'.format(self.fullname(), self.email)
+
+
+	def __add__(self,other):
+		return self.pay + other.pay
+
+	def __len__(self):
+		return len(self.fullname())
+
+
 class Developer(Employee):
 	def __init__(self,first,last,pay,prog_lang):
 		super().__init__(first,last,pay)
@@ -85,46 +100,46 @@ emp2 = Employee('alex','paul',1000000)
 #print(Employee.num_emps)
 
 
-emp_str_1 = 'John-Doe-700000'
-emp_str_2 = 'Steve-Smith-30000'
-emp_str_3  = 'Jane-Doe-900000'
+#emp_str_1 = 'John-Doe-700000'
+#emp_str_2 = 'Steve-Smith-30000'
+#emp_str_3  = 'Jane-Doe-900000'
 
 
-first,last,pay = emp_str_1.split('-')
+#first,last,pay = emp_str_1.split('-')
 
-new_emp1 = Employee(first,last,pay)
+#new_emp1 = Employee(first,last,pay)
 
-new_emp2 = Employee.from_string(emp_str_2)
+#new_emp2 = Employee.from_string(emp_str_2)
 
-print(new_emp1.fullname())
+#print(new_emp1.fullname())
 
-print(new_emp2.fullname())
-
-
-import datetime
-my_date = datetime.date(2018,12,23)
-
-print(Employee.is_workday(my_date))
+#print(new_emp2.fullname())
 
 
-dev1 = Developer('John','Levi',563000,'Python')
-dev2 = Developer('Salim','Said',754000,'JAVA')
+#import datetime
+#my_date = datetime.date(2018,12,23)
+
+#print(Employee.is_workday(my_date))
+
+
+#dev1 = Developer('John','Levi',563000,'Python')
+#dev2 = Developer('Salim','Said',754000,'JAVA')
 
 
 
-mgr1 = Manager('Sue','Smith',90000,[dev1])
+#mgr1 = Manager('Sue','Smith',90000,[dev1])
 
-print(mgr1.email)
+#print(mgr1.email)
 
-mgr1.add_emp(dev2)
+#mgr1.add_emp(dev2)
 
-mgr1.remove_emp(dev1)
+#mgr1.remove_emp(dev1)
 
-mgr1.print_emps()
+#mgr1.print_emps()
 
-print(issubclass(Developer,Employee))
+#print(issubclass(Developer,Employee))
 
-print(issubclass(Manager, Developer))
+#print(issubclass(Manager, Developer))
 
 #print(dev1.fullname())
 
@@ -136,3 +151,25 @@ print(issubclass(Manager, Developer))
 #print(dev1.pay)
 #dev1.apply_raise()
 #print(dev1.pay)
+
+#print(emp1)
+print(repr(emp1))
+print(str(emp1))
+
+print(emp1.__str__())
+print(emp1.__repr__())
+
+
+print(1+2)
+
+print(int.__add__(1,2))
+print(str.__add__('a','b'))
+
+
+print(emp1 + emp2)
+
+print(len('mangu'))
+
+print('leoanrd'.__len__())
+
+print(len(emp2))
