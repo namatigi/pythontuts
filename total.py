@@ -19,6 +19,11 @@ class Employee:
 		self.last  = last.title()
 
 
+	@fullname.deleter
+	def fullname(self):
+		print("Delete Name!")
+		self.first = None
+		self.last = None
 
 emp1 = Employee('John','Smith')
 
@@ -28,3 +33,6 @@ print(emp1.first)
 print(emp1.email)
 
 print(emp1.fullname)
+
+
+del emp1.fullname
