@@ -122,6 +122,10 @@ mgr1.remove_emp(dev1)
 
 mgr1.print_emps()
 
+print(issubclass(Developer,Employee))
+
+
+
 #print(dev1.fullname())
 
 #print(help(Developer))
